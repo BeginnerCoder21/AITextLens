@@ -17,6 +17,8 @@ from collections import Counter
 import string
 from transformers import PreTrainedTokenizer
 
+nltk.download('punkt')
+
 model_ckpt = "MBZUAI/LaMini-Flan-T5-248M"
 tokenizer_t5 = T5Tokenizer.from_pretrained(model_ckpt)
 model_mini = T5ForConditionalGeneration.from_pretrained(model_ckpt, device_map='auto', torch_dtype=torch.float32)
